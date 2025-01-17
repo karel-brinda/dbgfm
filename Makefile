@@ -4,7 +4,7 @@ PACKAGE=dbgfm
 SGA=sga
 
 # Options
-CXXFLAGS=-g -O3
+CXXFLAGS=-g -O3 -std=c++14
 
 # Directories
 prefix=/usr/local
@@ -14,7 +14,7 @@ libdir=$(prefix)/lib
 pkgincludedir=$(includedir)/$(PACKAGE)
 
 # Programs and libraries to build
-PROGRAMS=dbgfm bwtdisk-prepare
+PROGRAMS=dbgfm dbgfm2 bwtdisk-prepare
 LIBRARIES=libdbgfm.a
 
 # Targets
@@ -62,6 +62,9 @@ libdbgfm.a: $(libdbgfm_a_OBJECTS) $(HEADERS)
 # Build dbgfm
 
 dbgfm: main.o libdbgfm.a
+	$(CXX) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+
+dbgfm2: main2.o libdbgfm.a
 	$(CXX) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 # Build bwtdisk-prepare
