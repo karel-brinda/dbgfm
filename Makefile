@@ -20,9 +20,11 @@ LIBRARIES=libdbgfm.a
 # Targets
 
 all: $(PROGRAMS)
+	make -C bwtdisk
 
 clean:
 	rm -f $(LIBRARIES) $(PROGRAMS) *.o
+	make -C bwtdisk clean
 
 install: $(PROGRAMS)
 	install $(PROGRAMS) $(DESTDIR)$(bindir)
