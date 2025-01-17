@@ -2,6 +2,10 @@
 *.fa.*
 *.bwtdisk
 
+*.lm
+*.sm
+*.str
+
 # Compile programs
 bwtdisk-prepare
 dbgfm
