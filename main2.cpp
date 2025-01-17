@@ -174,7 +174,7 @@ int main(int argc, char** argv) {
         if ((queries.size() % 2 == 0)) {
             /* transform 50% of the kmers into their reverse complements */
             std::string kmer_rc(k, 0);
-            compute_reverse_complement(kmer.data(), kmer_rc.data(), k);
+            compute_reverse_complement(kmer.data(), &kmer_rc[0], k);
             queries.push_back(kmer_rc);
         } else {
             queries.push_back(kmer);
