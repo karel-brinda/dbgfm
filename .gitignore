@@ -9,6 +9,7 @@
 # Compile programs
 bwtdisk-prepare
 dbgfm
+dbgfm2
 
 # Compiled Object files
 *.slo
